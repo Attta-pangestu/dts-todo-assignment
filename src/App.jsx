@@ -41,7 +41,7 @@ function App() {
     let m = now.getMinutes();
     let s = now.getSeconds();
     let completedOn =
-      dd + "-" + mm + "-" + yyyy + " at " + h + ":" + m + ":" + s;
+      dd + "-" + mm + "-" + yyyy + " pada " + h + ":" + m + ":" + s;
 
     let filteredItem = {
       ...allTodos[index],
@@ -102,26 +102,26 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Todos</h1>
+      <h1>Aplikasi Todo Saya</h1>
 
       <div className="todo-wrapper">
         <div className="todo-input">
           <div className="todo-input-item">
-            <label>Title</label>
+            <label>Judul</label>
             <input
               type="text"
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
-              placeholder="What's the task title?"
+              placeholder="Apa judul tugas?"
             />
           </div>
           <div className="todo-input-item">
-            <label>Description</label>
+            <label>Deskripsi</label>
             <input
               type="text"
               value={newDescription}
               onChange={(e) => setNewDescription(e.target.value)}
-              placeholder="What's the task description?"
+              placeholder="Apa deskripsi tugas?"
             />
           </div>
           <div className="todo-input-item">
@@ -130,7 +130,7 @@ function App() {
               onClick={handleAddTodo}
               className="primaryBtn"
             >
-              Add
+              Tambah
             </button>
           </div>
         </div>
@@ -146,7 +146,7 @@ function App() {
             className={`secondaryBtn ${isCompleteScreen === true && "active"}`}
             onClick={() => setIsCompleteScreen(true)}
           >
-            Completed
+            Selesai
           </button>
         </div>
 
@@ -157,12 +157,12 @@ function App() {
                 return (
                   <div className="edit__wrapper" key={index}>
                     <input
-                      placeholder="Updated Title"
+                      placeholder="Judul yang Diperbarui"
                       onChange={(e) => handleUpdateTitle(e.target.value)}
                       value={currentEditedItem.title}
                     />
                     <textarea
-                      placeholder="Updated Title"
+                      placeholder="Deskripsi yang Diperbarui"
                       rows={4}
                       onChange={(e) => handleUpdateDescription(e.target.value)}
                       value={currentEditedItem.description}
@@ -172,7 +172,7 @@ function App() {
                       onClick={handleUpdateToDo}
                       className="primaryBtn"
                     >
-                      Update
+                      Perbarui
                     </button>
                   </div>
                 );
@@ -188,12 +188,12 @@ function App() {
                       <AiOutlineDelete
                         className="icon"
                         onClick={() => handleDeleteTodo(index)}
-                        title="Delete?"
+                        title="Hapus?"
                       />
                       <BsCheckLg
                         className="check-icon"
                         onClick={() => handleComplete(index)}
-                        title="Complete?"
+                        title="Selesai?"
                       />
                       <AiOutlineEdit
                         className="check-icon"
@@ -214,7 +214,7 @@ function App() {
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
                     <p>
-                      <small>Completed on: {item.completedOn}</small>
+                      <small>Selesai pada: {item.completedOn}</small>
                     </p>
                   </div>
 
@@ -222,7 +222,7 @@ function App() {
                     <AiOutlineDelete
                       className="icon"
                       onClick={() => handleDeleteCompletedTodo(index)}
-                      title="Delete?"
+                      title="Hapus?"
                     />
                   </div>
                 </div>
